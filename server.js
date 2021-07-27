@@ -26,8 +26,8 @@ app.use(express.urlencoded({extended:false}));
 app.use(methodOverride('_method'));
 
 //====Routes====//
-const recipe_controller = require('./controllers/recipe_controller.js')
-app.use('/recipes', recipe_controller);
+const recipe_router = require('./routes/recipe_routes.js')
+app.use('/recipes', recipe_router);
 
 
 //====listener====//
