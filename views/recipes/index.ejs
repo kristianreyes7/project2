@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%-include('../partials/head.ejs')%>
+</head>
+<body>
+  <header>
+    <%-include('../partials/header.ejs')%>
+  </header>
+  <h1>hello</h1>
+  <ul>
+          <% for (let i = 0; i < recipe.length; i++){%>
+          <li><%=recipe[i]%></li>
+          
+          <%}%>
+        </ul>
+  <footer>
+    <%-include('../partials/footer.ejs')%>
+  </footer>
+</body>
+</html>

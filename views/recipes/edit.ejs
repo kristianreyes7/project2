@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include('../partials/head.ejs')%>
+  </head>
+<body>
+  <header>
+    <%-include('../partials/header.ejs')%>
+  </header>
+  
+  <div class="container-fluid">
+    <form action="/recipes/<%=recipe.id%>?_method=PUT" method="POST">
+      <div class="row row-cols-1 gy-2 m-2">
+        <div class="col new_title">
+          <input type="text" name="title" value="<%=recipe.title%>" id="" placeholder="Title">
+        </div>
+        <div class="col new_description">
+          <input type="text" name="description" id="" placeholder="description">
+        </div>    
+        <div class="col new_ingredients">
+          <input type="text" name="ingredients" id="" placeholder="Ingredients">
+          <div class="row">
+            <input class="new_ingredientBtn" type="button" value="New Ingredient?">
+          </div>
+        </div>
+        <div class="col">
+          <input type="text" name="directions" placeholder="Directions">
+        </div>   
+        <div class="row row-cols-3">
+          <div class="col new_prep_time">
+            <input type="number" name="prep_time" placeholder="Prep Time?">
+          </div>
+          <div class="col new_cook_time">
+            <input type="number" name="cook_time" id="" placeholder="Cook Time?">
+          </div>
+          <div class="col new_serving_size">
+            <input type="number" name="serving_size" id="" placeholder="Servings?">
+          </div>
+        </div>    
+        <div class="row row-cols-3">
+          <div class="col new_date">
+            <label for="date">Date</label>
+            <input type="date" name="date" id="date">
+          </div>
+          <div class="col new_rating">
+            <input type="number" name="rating" id="" placeholder="Rating?">
+          </div>
+          <div class="col">
+            <input type="text" name="comments" id="" placeholder="Comments?">
+          </div>
+        </div>
+        <div class="col">
+          <input type="submit" value="Create Recipe">
+        </div>
+    </div>
+
+</div>
+</form>
+
+
+
+
+
+
+  <footer>
+    <%-include('../partials/footer.ejs')%>
+  </footer>
+</body>
+</html>
