@@ -33,7 +33,7 @@ app.use(
   })
 )
 
-app.use('/', (req, res) => {
+app.get('/', (req, res) => {
   res.redirect('/recipes');
 })
 // const isAuthenticated = (req, res, next) => {
@@ -49,7 +49,7 @@ app.use('/', (req, res) => {
 
 //====Routes====//
 const recipe_router = require('./routes/recipe_routes.js')
-app.use('/recipes',   recipe_router);
+app.use('/recipes', recipe_router);
 
 const user_router = require('./routes/users_routes.js')
 app.use('/users', user_router)
