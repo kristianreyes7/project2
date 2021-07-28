@@ -6,61 +6,39 @@
 <body>
   <header>
     <%-include('../partials/header.ejs')%>
-    <section class="banner container-fluid row">
-      <div class="row banner-row">
-        <div class="col">
-         <img class="banner-img"src="/css/img/banner6.jpeg" alt="">
-        </div>
-        <div class="col d-flex banner-text">
-          <h1>Welcome</h1>
-          <a class="best-seller" href=""><p>Get Cooking?</p></a>
-        </div>
+    <div class="banner">
+      <div class="banner-img">
+        <img src="/css/img/banner7.jpeg" alt="">
       </div>
-      </section>
+      <div class="banner-text">
+        <h1>welcome</h1>
+        <a href=""><h5>Get Cooking?</h5></a>
+      </div>
+
+
+
+
+    </div>
   </header>
   
   <div class="main container-fluid">
-    <h3>A few of the favorites...</h3>
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <div class="recipe-carousel">
+      <div class="fav-container">
+        <div class="recipe-1">
+          .recipe-img
+        </div>
+        <div class="recipe-2">
+          
+        </div>
+        <!-- <div class="recipe-3">
+          
+        </div> -->
       </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="<%=recipe[0].picture%>" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5><%=recipe[0].title%></h5>
-            <p><%=recipe[0].description%></p>
-            <a style="color: white" href="/recipes/<%=recipe[0].id%>"><p>RECIPE</p></a>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="<%=recipe[recipe.length-2].picture%>" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5><%=recipe[recipe.length-2].title%></h5>
-            <p><%=recipe[recipe.length-2].description%></p>
-            <a style="color: white" href="/recipes/<%=recipe[recipe.length-2].id%>"><p>RECIPE</p></a>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="<%=recipe[recipe.length-1].picture%>" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5><%=recipe[recipe.length-1].title%></h5>
-            <p><%=recipe[recipe.length-1].description%></p>
-            <a style="color: white" href="/recipes/<%=recipe[recipe.length-1].id%>"><p>RECIPE</p></a>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+
+
+
+
+
     </div>
     <h3>More Recipes... </h3>
     <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 g-4">

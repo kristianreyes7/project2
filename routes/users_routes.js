@@ -6,6 +6,5 @@ const User_controller = require('../controllers/user_controller.js');
 //====create====//
 users.get('/new', User_controller.users_new);
 users.post('/', User_controller.user_pw);
-
 //====export====//
 module.exports = users;

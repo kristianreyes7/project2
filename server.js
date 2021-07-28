@@ -32,9 +32,19 @@ app.use(
     saveUninitialized: false // default  more info: https://www.npmjs.com/package/express-session#resave
   })
 )
+const isAuthenticated = (req, res, next) => {
+  if (req.session.currentUser) {
+    return next()
+  } else {
+    res.redirect('/sessions/new')
+  }
+}
+
+
+
 //====Routes====//
 const recipe_router = require('./routes/recipe_routes.js')
-app.use('/recipes', recipe_router);
+app.use('/recipes', isAuthenticated, recipe_router);
 
 const user_router = require('./routes/users_routes.js')
 app.use('/users', user_router)
