@@ -39,12 +39,13 @@ app.use(
 //     res.redirect('/sessions/new')
 //   }
 // }
+// isAuthenticated
 
 
 
 //====Routes====//
 const recipe_router = require('./routes/recipe_routes.js')
-app.use('/recipes',  recipe_router);
+app.use('/recipes',   recipe_router);
 
 const user_router = require('./routes/users_routes.js')
 app.use('/users', user_router)
