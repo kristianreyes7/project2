@@ -32,6 +32,10 @@ app.use(
     saveUninitialized: false // default  more info: https://www.npmjs.com/package/express-session#resave
   })
 )
+
+app.use('/', (req, res) => {
+  res.redirect('/recipes');
+})
 // const isAuthenticated = (req, res, next) => {
 //   if (req.session.currentUser) {
 //     return next()
