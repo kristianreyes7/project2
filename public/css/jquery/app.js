@@ -7,9 +7,12 @@ $(() => {
       "placeholder": "Ingredients"
     });
     $('.new_ingredients').append($input);
-
   })
 
+
+  $('.carousel-control-next').on('click', () => {
+    
+  })
 
 
 

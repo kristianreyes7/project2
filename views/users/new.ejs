@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include('../partials/head.ejs');%>
+  </head>
+<body>
+  <header>
+    <%-include('../partials/header.ejs')%>
+  </header>
+  <div style="height: 75vh;" class="d-flex mt-5 justify-content-lg-center align-items-center">
+    <form action="/users" method="POST">
+      <div class="mb-1">
+        <label for="username">Enter Username</label>
+        <input class="form-control" type="text" name="username" id="username"><br>
+      </div>
+      <div class="mb-1">
+        <label for="password">Enter Password</label>
+        <input style="width: 55vw;" class="form-control" type="password" name="password" id="password"><br>
+      </div>
+      <input class="btn btn-secondary" type="submit" value="Sign-up" role="button">
+      <a class="btn btn-secondary" href="/recipes" role="button">Back To Index</a> 
+    </form>
+  </div>
+  <footer>
+    <%- include('../partials/footer.ejs')%>
+  </footer>
+</body>
+</html>

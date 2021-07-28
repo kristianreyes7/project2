@@ -1,7 +1,50 @@
 <header>
-  <h1>Let's Eat</h1>
-  <ul>
-    <li>Sign Up</li>
-    <li>Login</li>
-  </ul>
+ <div class="auth-container">
+  <div class="">
+    <button class="auth">
+      <a href="/recipes">Home</a>
+    </button>
+  </div>
+  <div class="auth-divider">
+    <span> | </span>
+  </div>
+  <% if (currentUser) {%>
+    <div class="">
+      <button class="auth">
+        <a href="">Welcome <%=currentUser.username%></a>
+      </button>
+    </div>
+    <div class="auth-divider">
+      <span> | </span>
+    </div>
+    <div class="">
+      <form action="/sessions?_method=DELETE" method="POST">
+      <input type="submit" value="Log Out" class="btn-small red search-btn" />
+    </form>
+    </div>
+  <%}else {%>
+   <div class="">
+     <button class="auth">
+       <a href="/users/new">Sign Up</a>
+     </button>
+   </div>
+   <div class="auth-divider">
+     <span> | </span>
+   </div>
+   <div class="">
+     <button class="auth">
+       <a href="/sessions/new">Login</a>
+     </button>
+   </div>
+  <%}%>
+ </div>
+ <div class="header-container">
+   <div class="brand">
+     <h1>Let's Eat</h1>
+   </div>
+   <div class="Search">
+     <input type="search" name="" id="" value="Search Recipes..." class="search-bar">
+     <input type="submit" value="search" class="search-btn">
+   </div>
+ </div>
 </header>

@@ -2,17 +2,16 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const Recipe_schema = new Schema({
-  date: {type: Date, default: Date.now},
-  title: {type: String, required: true},
-  prep_time: {type: Number, required: true},
-  rating: {type: Number, required: false},
-  cook_time: {type: Number, required: true},
-  description: {type: String, required: false},
-  serving_size: {type: Number, required: false},
+  category: String,
+  title: String,
+  description: String,
+  picture: String,
   ingredients: [String],
-  directions: {step: [String]},
-  comments: {type: String},
-})
+  directions: [String],
+  prepTime: Number,
+  cookTime: Number,
+  servings: Number,
+}, {timestamps: true})
 
 
 const Recipe = mongoose.model('Recipe', Recipe_schema);

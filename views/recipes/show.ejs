@@ -7,8 +7,53 @@
   <header>
     <%-include('../partials/header.ejs')%>
   </header>
-  <h1>hello</h1>
-    <%=recipe.title%>
+  <div class="container-fluid">
+    <div class="recipe-title">
+      <h3><%=recipe.title%></h3>
+    </div>
+    <div class="recipe-category">
+      <p><%=recipe.category%></p>
+    </div>
+    <div class="recipe-img">
+      <img style="width: 33vw; height: 25vh;" src="<%=recipe.picture%>" alt="">
+    </div>
+    <div class="recipe-description">
+      <p><%=recipe.description%></p>
+    </div>
+    <div class="recipe-prepTime">
+      <p>Prep Time: <%=recipe.prepTime%></p>
+    </div>
+    <div class="recipe-cookTime">
+      <p>Cook Time: <%=recipe.cookTime%></p>
+    </div>
+    <div class="recipe-servings">
+      <p>Servings: <%=recipe.servings%></p>
+    </div>
+    <div class="recipe-ingredients">
+      <ul>
+        <li><%=recipe.ingredients%></li>
+      </ul>
+    </div>
+    <div class="recipe-directions">
+      <ul>
+        <li><%=recipe.directions%></li>
+      </ul>
+    </div>
+    <div class="recipe-timestamp">
+      <p><%=recipe.timestamps%></p>
+    </div>
+
+
+
+
+    <button type="button" name="button">
+      <a href="/recipes/<%=recipe._id%>/edit">Edit</a>
+    </button>
+    <br>
+    <form action="/recipes/<%=recipe._id%>?_method=DELETE" method="POST">
+      <input type="submit" value="DELETE"/>
+    </form>
+  </div>
   <footer>
     <%-include('../partials/footer.ejs')%>
   </footer>

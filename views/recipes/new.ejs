@@ -7,61 +7,46 @@
   <header>
     <%-include('../partials/header.ejs')%>
   </header>
-  
-  <div class="container-fluid">
+  <div class="mt-2 d-flex justify-content-lg-center">
     <form action="/recipes" method="POST">
-      <div class="row row-cols-1 gy-2 m-2">
-        <div class="col new_title">
-          <input type="text" name="title" id="" placeholder="Title">
-        </div>
-        <div class="col new_description">
-          <input type="text" name="description" id="" placeholder="description">
-        </div>    
-        <div class="col new_ingredients">
-          <input type="text" name="ingredients" id="" placeholder="Ingredients">
-          <div class="row">
-            <input class="new_ingredientBtn" type="button" value="New Ingredient?">
-          </div>
-        </div>
-        <div class="col">
-          <input type="text" name="directions" placeholder="Directions">
-        </div>   
-        <div class="row row-cols-3">
-          <div class="col new_prep_time">
-            <input type="number" name="prep_time" placeholder="Prep Time?">
-          </div>
-          <div class="col new_cook_time">
-            <input type="number" name="cook_time" id="" placeholder="Cook Time?">
-          </div>
-          <div class="col new_serving_size">
-            <input type="number" name="serving_size" id="" placeholder="Servings?">
-          </div>
-        </div>    
-        <div class="row row-cols-3">
-          <div class="col new_date">
-            <label for="date">Date</label>
-            <input type="date" name="date" id="date">
-          </div>
-          <div class="col new_rating">
-            <input type="number" name="rating" id="" placeholder="Rating?">
-          </div>
-          <div class="col">
-            <input type="text" name="comments" id="" placeholder="Comments?">
-          </div>
-        </div>
-        <div class="col">
-          <input type="submit" value="Create Recipe">
-        </div>
-    </div>
-
-</div>
-</form>
-
-
-
-
-
-
+      <div class="mb-3">
+        <label for="recipeCategory">Choose a Category</label>
+        <select name="recipeCategory" id="recipeCategory" form="categoryFrom">
+          <option value="Breakfast">Breakfast</option>
+          <option value="Lunch">Lunch</option>
+          <option value="Snack">Snack</option>
+          <option value="Dinner">Dinner</option>
+        </select>
+      </div>
+      <div class="mb-1">
+        <input class="form-control" type="text" name="title" id="recipeTitle" placeholder="Enter Name of Recipe"><br>
+      </div>
+      <div class="mb-3">
+        <textarea style="width:600px; height:150px;" class="form-control" placeholder="Description goes here" name="description" id="recipeDescription" cols="30" rows="10"></textarea><br>
+      </div>
+      <div class="mb-3">
+        <input class="form-control" type="url" name="picture" id="recipeImg" placeholder="Enter image Url"><br>
+      </div>
+      <div class="mb-3">
+        <input class="form-control" type="text" name="ingredients" id="recipeIngredients" placeholder="Enter Ingredients:  Separate with a comma"><br>
+      </div>
+      <div class="mb-3">
+        <textarea style="width:600px; height:175px;" class="form-control" placeholder="Enter Directions: Separate steps with a comma" name="directions" id="recipeDirections" cols="30" rows="10"></textarea><br>
+      </div>
+      <div class="mb-3">
+        <input class="form-control" type="number" name="prepTime" id="prepTime" placeholder="Enter Prep Time"><br>
+      </div>
+      <div class="mb-3">
+        <input class="form-control" type="number" name="cookTime" id="cookTime" placeholder="Enter Cook Time"><br>
+      </div>
+      <div class="mb-3">
+        <input class="form-control" type="number" name="servingSize" id="servingSize" placeholder="Enter Serving Size"><br>
+      </div>
+      <div class="mb-3">
+        <input class="form-control btn btn-secondary" type="submit" value="Create Recipe" role="button">
+      </div>
+    </form>
+  </div>
   <footer>
     <%-include('../partials/footer.ejs')%>
   </footer>

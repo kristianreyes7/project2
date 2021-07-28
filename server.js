@@ -4,6 +4,7 @@ const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const app = express();
 const db = mongoose.connection;
+const session = require('express-session')
 require ('dotenv').config();
 
 //=====PORT====//
@@ -24,11 +25,22 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 app.use(express.static('public'));
 app.use(express.urlencoded({extended:false}));
 app.use(methodOverride('_method'));
-
+app.use(
+  session({
+    secret: process.env.SECRET, //a random string do not copy this value or your stuff will get hacked
+    resave: false, // default more info: https://www.npmjs.com/package/express-session#resave
+    saveUninitialized: false // default  more info: https://www.npmjs.com/package/express-session#resave
+  })
+)
 //====Routes====//
 const recipe_router = require('./routes/recipe_routes.js')
 app.use('/recipes', recipe_router);
 
+const user_router = require('./routes/users_routes.js')
+app.use('/users', user_router)
+
+const sessions_router = require('./routes/sessions_routes.js')
+app.use('/sessions', sessions_router);
 
 //====listener====//
 app.listen(PORT, () => {
