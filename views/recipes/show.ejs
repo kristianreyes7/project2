@@ -8,36 +8,46 @@
     <%-include('../partials/header.ejs')%>
   </header>
   <div class="container-fluid">
-    <div class="recipe-title">
+    <div style="text-align: center" class="recipe-title">
       <h3><%=recipe.title%></h3>
     </div>
-    <div class="recipe-category">
-      <p><%=recipe.category%></p>
-    </div>
+    <ul style="list-style-type:none" class="text-muted d-flex justify-content-between">
+      <li><div class="recipe-category">
+        <p><%=recipe.category%> </p>
+      </div></li>
+      <li><div class="recipe-category">
+        <p>Prep Time: <%=recipe.prepTime%></p>
+      </div></li>
+      <li><div class="recipe-category">
+        <p>Cook Time: <%=recipe.cookTime%></p>
+      </div></li>
+      <li><div class="recipe-category">
+        <p>Servings: <%=recipe.servings%></p>
+      </div></li>
+    </ul>
     <div class="recipe-img">
-      <img style="width: 33vw; height: 25vh;" src="<%=recipe.picture%>" alt="">
+      <img src="<%=recipe.picture%>" alt="">
     </div>
     <div class="recipe-description">
       <p><%=recipe.description%></p>
     </div>
-    <div class="recipe-prepTime">
-      <p>Prep Time: <%=recipe.prepTime%></p>
-    </div>
-    <div class="recipe-cookTime">
-      <p>Cook Time: <%=recipe.cookTime%></p>
-    </div>
-    <div class="recipe-servings">
-      <p>Servings: <%=recipe.servings%></p>
-    </div>
     <div class="recipe-ingredients">
+      <h3>Ingredients: </h3>
+      
       <ul>
-        <li><%=recipe.ingredients%></li>
+        <% for (let i = 0; i < recipe.ingredients.length; i++){%>
+        <li><%=recipe.ingredients[i]%></li>
+        <%}%>
       </ul>
     </div>
     <div class="recipe-directions">
-      <ul>
-        <li><%=recipe.directions%></li>
-      </ul>
+      <h3>Directions: </h3>
+
+      <ol>
+        <% for (let i = 0; i < recipe.directions.length; i++){%>
+        <li><%=recipe.directions[i]%></li>
+        <%}%>
+      </ol>
     </div>
     <div class="recipe-timestamp">
       <p><%=recipe.timestamps%></p>

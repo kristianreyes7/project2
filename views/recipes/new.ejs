@@ -11,11 +11,11 @@
     <form action="/recipes" method="POST">
       <div class="mb-3">
         <label for="recipeCategory">Choose a Category</label>
-        <select name="recipeCategory" id="recipeCategory" form="categoryFrom">
-          <option value="Breakfast">Breakfast</option>
-          <option value="Lunch">Lunch</option>
-          <option value="Snack">Snack</option>
-          <option value="Dinner">Dinner</option>
+        <select name="category" id="recipeCategory" form="categoryFrom">
+          <option value="Breakfast" name="Breakfast">Breakfast</option>
+          <option value="Lunch" name="Lunch">Lunch</option>
+          <option value="Snack" name="Snack">Snack</option>
+          <option value="Dinner" name="Dinner">Dinner</option>
         </select>
       </div>
       <div class="mb-1">
@@ -28,10 +28,10 @@
         <input class="form-control" type="url" name="picture" id="recipeImg" placeholder="Enter image Url"><br>
       </div>
       <div class="mb-3">
-        <input class="form-control" type="text" name="ingredients" id="recipeIngredients" placeholder="Enter Ingredients:  Separate with a comma"><br>
+        <textarea style="width:600px; height:175px;" class="form-control" placeholder="Enter Ingredients: Separate by putting each ingredient on its own line." name="directions" id="recipeDirections" cols="30" rows="10"></textarea><br>
       </div>
       <div class="mb-3">
-        <textarea style="width:600px; height:175px;" class="form-control" placeholder="Enter Directions: Separate steps with a comma" name="directions" id="recipeDirections" cols="30" rows="10"></textarea><br>
+        <textarea style="width:600px; height:175px;" class="form-control" placeholder="Enter Ingredients: Separate by putting each step on its own line." name="directions" id="recipeDirections" cols="30" rows="10"></textarea><br>
       </div>
       <div class="mb-3">
         <input class="form-control" type="number" name="prepTime" id="prepTime" placeholder="Enter Prep Time"><br>

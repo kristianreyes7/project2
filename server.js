@@ -33,9 +33,9 @@ app.use(
   })
 )
 
-app.get('/', (req, res) => {
-  res.redirect('/recipes');
-})
+// app.get('/', (req, res) => {
+//   res.redirect('/recipes');
+// })
 // const isAuthenticated = (req, res, next) => {
 //   if (req.session.currentUser) {
 //     return next()

@@ -40,11 +40,14 @@
  </div>
  <div class="header-container">
    <div class="brand">
-     <h1>Let's Eat</h1>
+     <a href="/recipes"><h1>Let's Eat</h1></a>
    </div>
    <div class="Search">
-     <input type="search" name="" id="" value="Search Recipes..." class="search-bar">
-     <input type="submit" value="search" class="search-btn">
+     <form action="/recipes/search" method="get">
+      <input type="text" name="searchstring" id="" placeholder="Search Recipes..." class="search-bar">
+      <input type="submit" value="search" class="search-btn">
+     </form>
+ 
    </div>
  </div>
 </header>

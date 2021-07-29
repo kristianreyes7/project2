@@ -46,8 +46,11 @@
 .brand{
   margin: 5px 0px 5px 35px;
   font-family: 'STIX Two Math', serif;
+}
+.brand a{
   color: rgb(255, 94, 0);
   text-shadow: 1px 1px white;
+  text-decoration: none;
 }
 /* banner */
 .banner{
@@ -82,62 +85,35 @@
 }
 /* carousel */
 .recipe-carousel{
-  width: 98vw;
-  height: 50vh;
-  border: 1px solid red;
+  height: 55vh;
 }
-.fav-container{
-  border: 1px solid red;
-  height: 95%;
-  width: 100%;
-  margin: 15px auto;
-  display: flex;
-  justify-content: space-around;
-  padding: 25px;
-}
-.recipe-1{
-  border: 1px solid red;
-  width: 45%;
-  height: 100%;
-
-}
-.recipe-2{
-  border: 1px solid red;
-  width: 45%;
-  height: 100%;
-}
-.recipe-3{
-  border: 1px solid red;
-  width: 30%;
-  height: 100%;
+.category{
+  height: 55vh;
 }
 /* card */
-.card-info{
-  margin-right: 20px;
+.recipe-picture{
+  height: 30vh;
+
 }
-.card-body a{
+.recipe-picture img{
+  width: 100%;
+  height: 100%;
+}
+.recipe-title{
+  text-align: center;
+}
+.recipe-title a{
   color: black;
   text-decoration: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.recipe-details{
+  
+}
+.recipe-details ul{
+  margin-right: 15px;
+  font-size: 11px;
+}
+/* footer */
 .footer-container{
   border: 1px solid lightgrey;
   background-image: url('/css/img/banner5.jpeg');
@@ -145,7 +121,7 @@
 }
 .footer-options{
   height: 8vh;
-  background: rgb(105, 129, 62);
+  background: rgb(223, 228, 213);
 }
 .footer-options ul{
   display: flex;
@@ -169,4 +145,5 @@
   margin: 5px;
   font-size: 10px;
   color: white;
+  text-shadow: 1px 1px black;
 }

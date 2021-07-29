@@ -1,0 +1,12 @@
+*{
+  /* border: 1px solid red; */
+  margin: 0;
+  padding: 0;
+}
+.recipe-img{
+  width: 98vw;
+
+}
+.recipe-img img{
+  width: 98%;
+}

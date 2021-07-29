@@ -22,42 +22,82 @@
   </header>
   
   <div class="main container-fluid">
-    <div class="recipe-carousel">
-      <div class="fav-container">
-        <div class="recipe-1">
+    <div class="recipe-carousel container-fluid">
+      <h4>Category: </h4>
+      <div class="row row-cols-3 mt-3 g-2">
+        <div class="col category breakfast">
+          <div class="card mt-2 recipe-card">
+            <div class="recipe-picture">
+              <img src="/css/img/breakfast.jpeg" class="card-img-top p-1" alt="...">
+            </div>
+            <div class="card-body">
+              <div class="recipe-title">
+                <a href="/recipes/breakfast">
+                  <h5 class="card-title">Breakfast</h5>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col category lunch">
+          <div class="card mt-2 recipe-card">
+            <div class="recipe-picture">
+              <img src="/css/img/lunch.jpeg" class="card-img-top p-1" alt="...">
+            </div>
+            <div class="card-body">
+              <div class="recipe-title">
+                <a href="/recipes/lunch">
+                  <h5 class="card-title">Lunch</h5>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col category snack">
           <div class="recipe-img">
             
           </div>
-        </div>
-        <div class="recipe-2">
-          
-        </div>
-        <!-- <div class="recipe-3">
-          
         </div> -->
+        <div class="col category dinner">
+          <div class="card mt-2 recipe-card">
+            <div class="recipe-picture">
+              <img src="/css/img/dinner.jpeg" class="card-img-top p-1" alt="...">
+            </div>
+            <div class="card-body">
+              <div class="recipe-title">
+                <a href="/recipes/dinner">
+                  <h5 class="card-title">Dinner</h5>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-
-
-
-
     </div>
     <h3>More Recipes... </h3>
-    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 g-4">
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 g-2">
         <%for (let i = 0; i < recipe.length; i++){%>
-        <div class="col mb-2">
+        <div class="col mb-1">
           <div class="card recipe-card">
-            <img height="350px" src="<%=recipe[i].picture%>" class="card-img-top p-1" alt="...">
-            <div style="color: black" class="card-body">
-              <a href="/recipes/<%=recipe[i].id%>">
-                <h5 style="text-align: center;" class="card-title"><%=recipe[i].title%></h5></a>
+            <div class="recipe-picture">
+              <img src="<%=recipe[i].picture%>" class="card-img-top p-1" alt="...">
+            </div>
+            <div class="card-body">
+              <div class="recipe-title">
+                <a href="/recipes/<%=recipe[i].id%>">
+                  <h5 class="card-title"><%=recipe[i].title%></h5>
+                </a>
+              </div>
+              <div class="recipe-details">
+                <ul style="list-style-type: none" class="card-info d-flex justify-content-around">
+                  <li><small class="text-muted">Serves: <%=recipe[i].servings%></small></li>
+                  <li><small class="text-muted">Prep Time: <%=recipe[i].prepTime%> mins</small></li>
+                  <li><small class="text-muted">Cook Time: <%=recipe[i].cookTime%> mins</small></li>
+                </ul>
+              </div>
             </div>
             <div class="card-footer">
-              <ul style="list-style-type: none" class="card-info d-flex justify-content-between">
-                <li><small class="text-muted">Serves: <%=recipe[i].servings%></small></li>
-                <li><small class="text-muted">Prep Time: <%=recipe[i].prepTime%></small></li>
-                <li><small class="text-muted">Cook Time: <%=recipe[i].cookTime%></small></li>
-              </ul>
+              
               
             </div>
           </div>
