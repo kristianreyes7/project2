@@ -43,16 +43,37 @@ const dinner_index = (req, res) => {
 }
 
 const search_index = (req, res) => {
-  Recipes.find({title: req.body.searchstring}, (error, foundItem) => {
+  Recipes.find({title: req.params.title}, (error, foundItem) => {
     error? console.log(error)
     :
-    console.log(req.body.searchstring);
+    console.log(req.params.title);
     res.render('recipes/s_index.ejs', {
       recipe: foundItem,
       currentUser: req.session.currentUser    
     }) 
   })  
 }
+// const about = (req, res) => {
+//   Recipes.find({}, (error, allRecipes) => {
+//     error? console.log(error)
+//     :
+//     res.render('recipes/index.ejs', {
+//       recipe: allRecipes,
+//       currentUser: req.session.currentUser
+//     })    
+//   })  
+// }
+// const motto = (req, res) => {
+//   Recipes.find({}, (error, allRecipes) => {
+//     error? console.log(error)
+//     :
+//     res.render('recipes/index.ejs', {
+//       recipe: allRecipes,
+//       currentUser: req.session.currentUser
+//     })    
+//   })  
+// }
+
 //====create====//
 const new_render = (req, res) => {
   res.render('recipes/new.ejs',{

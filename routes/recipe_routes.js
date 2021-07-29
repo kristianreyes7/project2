@@ -7,7 +7,7 @@ meal.get('/', Recipe_controller.index);
 meal.get('/breakfast', Recipe_controller.breakfast_index);
 meal.get('/lunch', Recipe_controller.lunch_index);
 meal.get('/dinner', Recipe_controller.dinner_index);
-meal.get('/search', Recipe_controller.search_index);
+meal.get('/search/:title', Recipe_controller.search_index);
 
 //====Render New Page====//
 meal.get('/new', Recipe_controller.new_render);

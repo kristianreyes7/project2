@@ -12,12 +12,8 @@
       </div>
       <div class="banner-text">
         <h1>welcome</h1>
-        <a href=""><h5>Get Cooking?</h5></a>
+        <a class="randomRecipe" href=""><h5>Get Cooking?</h5></a>
       </div>
-
-
-
-
     </div>
   </header>
   
@@ -55,7 +51,8 @@
         </div>
         <!-- <div class="col category snack">
           <div class="recipe-img">
-            
+           
+
           </div>
         </div> -->
         <div class="col category dinner">
@@ -74,6 +71,8 @@
         </div>
       </div>
     </div>
+    <div id="like_button_container"></div>
+
     <h3>More Recipes... </h3>
     <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 g-2">
         <%for (let i = 0; i < recipe.length; i++){%>
@@ -104,31 +103,12 @@
         </div>
         <%}%>
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   </div>
   <footer>
-    <div class="footer-options">
-      <ul>
-        <li><a href="/recipes/new">Make New Recipe</a></li>
-        <!-- <li>Suggest an edit</li> -->
-      </ul>
-    </div>
     <%-include('../partials/footer.ejs')%>
   </footer>
 </body>
+<script>
+  $('.randomRecipe').attr('href', 'recipes/<%=recipe[Math.floor(Math.random() * recipe.length)].id%>');
+</script>
 </html>
