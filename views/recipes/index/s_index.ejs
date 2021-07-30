@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <%-include('../partials/head.ejs')%>
+  <%-include('../../partials/head.ejs')%>
 </head>
 <body>
   <header>
-    <%-include('../partials/header.ejs')%>
+    <%-include('../../partials/header.ejs')%>
   </header>
   
   <div class="main container-fluid">
-    <h3>Lunch</h3>
+    <h3>Search Results... </h3>
     <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 g-2">
         <%for (let i = 0; i < recipe.length; i++){%>
         <div class="col mb-1">
@@ -107,6 +107,7 @@
 
 
 
+
   </div>
   <footer>
     <div class="footer-options">
@@ -115,7 +116,7 @@
         <!-- <li>Suggest an edit</li> -->
       </ul>
     </div>
-    <%-include('../partials/footer.ejs')%>
+    <%-include('../../partials/footer.ejs')%>
   </footer>
 </body>
 </html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%-include('../../partials/head.ejs')%>
+</head>
+<body>
+  <header>
+    <%-include('../../partials/header.ejs')%>
+    
+  </header>
+  <div class="main container-fluid">
+    <article>
+      <h2>Bringing family recipes to your kitchen </h2>
+      <h3>Founded: 2021</h3>
+    
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, quis a? Fuga at soluta atque iure explicabo quibusdam optio, laborum a, minima aliquid inventore numquam pariatur deleniti necessitatibus tempora saepe.
+      </p>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique quam ad nesciunt commodi. Adipisci quam eligendi velit vel explicabo asperiores tempora quo iste officia sunt architecto nulla dicta hic commodi repudiandae facere saepe placeat praesentium laborum ducimus, tempore veniam beatae? Ut iusto, quia vero doloremque nobis corrupti fugiat impedit nesciunt officia tempore provident consectetur incidunt? Ipsa perspiciatis earum itaque quisquam.</p>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi voluptate itaque cupiditate sunt pariatur illo ullam explicabo consectetur vero fugiat! Deleniti optio, voluptatem reprehenderit facere distinctio fugit pariatur! Quisquam perspiciatis a nam quos inventore nobis esse odit quae itaque? Accusantium est aspernatur laudantium inventore doloribus facere deleniti adipisci aliquam in, sunt deserunt et corporis assumenda molestiae excepturi reprehenderit possimus nesciunt quo, amet similique. Harum quis et alias nesciunt iure dolorum facilis sed, sit porro voluptates illo velit reprehenderit quam deleniti culpa, corporis eaque obcaecati! Similique quas nobis laudantium incidunt id, veniam vitae suscipit. Praesentium vero, ipsum enim amet ullam quos.</p>
+    </article>
+  </div>
+  <footer>
+    <%-include('../../partials/footer.ejs')%>
+  </footer>
+</body>
+<script>
+  $('.randomRecipe').attr('href', '/recipes/<%=recipe[Math.floor(Math.random() * recipe.length)].id%>');
+</script>
+</html>

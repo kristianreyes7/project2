@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include('../partials/head.ejs')%>
+  </head>
+<body>
+  <header>
+    <%-include('../partials/header.ejs')%>
+  </header>
+  <div class="mt-2 d-flex justify-content-lg-center">
+    <form action="/recipes/<%=recipe.id%>/comments" method="POST">
+      <div class="mb-3">
+        <input class="form-control" type="text" name="title" id="recipeImg" placeholder="Enter title"><br>
+      </div>
+      <div class="mb-3">
+        <textarea style="width:600px; height:150px;" class="form-control" placeholder="Comment goes here" name="comment" id="recipeDescription" cols="30" rows="10"></textarea><br>
+      </div>
+      <div class="mb-3">
+        <input class="form-control btn btn-secondary" type="submit" value="Create Comment" role="button">
+      </div>
+    </form>
+  </div>
+  <footer>
+    <%-include('../partials/footer.ejs')%>
+  </footer>
+</body>
+</html>

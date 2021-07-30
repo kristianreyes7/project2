@@ -8,32 +8,35 @@
     <%-include('../partials/header.ejs')%>
   </header>
   <div class="container-fluid">
-    <div style="text-align: center" class="recipe-title">
+    <div style="text-align: center" class="recipe-title mt-2">
       <h3><%=recipe.title%></h3>
+      <div class="recipe-description">
+        <p><%=recipe.description%></p>
+      </div>
     </div>
-    <ul style="list-style-type:none" class="text-muted d-flex justify-content-between">
-      <li><div class="recipe-category">
-        <p><%=recipe.category%> </p>
-      </div></li>
-      <li><div class="recipe-category">
-        <p>Prep Time: <%=recipe.prepTime%></p>
-      </div></li>
-      <li><div class="recipe-category">
-        <p>Cook Time: <%=recipe.cookTime%></p>
-      </div></li>
-      <li><div class="recipe-category">
-        <p>Servings: <%=recipe.servings%></p>
-      </div></li>
-    </ul>
-    <div class="recipe-img">
-      <img src="<%=recipe.picture%>" alt="">
+    <div class="recipe-infogroup">
+      <div class="recipe-img">
+        <img src="<%=recipe.picture%>" alt="">
+      </div>
+      <div class="recipe-info">
+        <ul style="list-style-type:none;" class="text-muted flex-column justify-content-center">
+          <li><div class="recipe-category">
+            <p><%=recipe.category%> </p>
+          </div></li>
+          <li><div class="recipe-category">
+            <p>Prep Time: <%=recipe.prepTime%> Mins</p>
+          </div></li>
+          <li><div class="recipe-category">
+            <p>Cook Time: <%=recipe.cookTime%> Mins</p>
+          </div></li>
+          <li><div class="recipe-category">
+            <p>Servings: <%=recipe.servings%> </p>
+          </div></li>
+        </ul>
+      </div>
     </div>
-    <div class="recipe-description">
-      <p><%=recipe.description%></p>
-    </div>
-    <div class="recipe-ingredients">
-      <h3>Ingredients: </h3>
-      
+    <div class="recipe-ingredients mt-3">
+      <h5>Ingredients: </h5>
       <ul>
         <% for (let i = 0; i < recipe.ingredients.length; i++){%>
         <li><%=recipe.ingredients[i]%></li>
@@ -41,7 +44,7 @@
       </ul>
     </div>
     <div class="recipe-directions">
-      <h3>Directions: </h3>
+      <h5>Directions: </h5>
 
       <ol>
         <% for (let i = 0; i < recipe.directions.length; i++){%>
@@ -55,14 +58,24 @@
 
 
 
-
-    <button type="button" name="button">
-      <a href="/recipes/<%=recipe._id%>/edit">Edit</a>
-    </button>
-    <br>
-    <form action="/recipes/<%=recipe._id%>?_method=DELETE" method="POST">
-      <input type="submit" value="DELETE"/>
-    </form>
+    <div class="btn-group mr-2" role="group">
+      <button type="button" class="btn btn-secondary" name="button">
+        <a style="color:white; text-decoration: none;" href="/recipes/<%=recipe._id%>/edit">Edit</a>
+      </button>
+    </div>
+    <div class="btn-group mr-2">
+      <form action="/recipes/<%=recipe._id%>?_method=DELETE" method="POST">
+        <input class="btn btn-secondary" type="submit" value="DELETE"/>
+      </form>
+    </div>
+    <div class="btn-group mr-2" role="group">
+      <button type="button" class="btn btn-secondary" name="button">
+        <a style="color:white; text-decoration: none;" href="/recipes/<%=recipe._id%>/comments">Reviews</a>
+      </button>
+    </div>
+    
+    
+  
   </div>
   <footer>
     <%-include('../partials/footer.ejs')%>

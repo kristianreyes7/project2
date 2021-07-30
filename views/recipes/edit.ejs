@@ -11,7 +11,7 @@
     <form action="/recipes/<%=recipe.id%>?_method=PUT" method="POST">
       <div class="mb-3">
         <label for="recipeCategory">Choose a Category</label>
-        <select name="recipe.category" id="recipeCategory" form="categoryFrom">
+        <select name="category" id="recipeCategory" form="categoryForm">
           <option value="Breakfast">Breakfast</option>
           <option value="Lunch">Lunch</option>
           <option value="Snack">Snack</option>
@@ -22,7 +22,7 @@
         <input class="form-control" type="text" name="title" id="recipeTitle" value="<%=recipe.title%>"><br>
       </div>
       <div class="mb-3">
-        <textarea style="width:600px; height:150px;" class="form-control" placeholder="<%=recipe.description%>" name="description" id="recipeDescription" cols="30" rows="10"></textarea><br>
+        <textarea style="width:600px; height:150px;" class="form-control" placeholder="<%=recipe.description%>" name="description" id="recipeDescription" cols="30" rows="10"><%=recipe.description%></textarea><br>
       </div>
       <div class="mb-3">
         <input class="form-control" type="url" name="picture" id="recipeImg" value="<%=recipe.picture%>"><br>
@@ -31,7 +31,7 @@
         <input class="form-control" type="text" name="ingredients" id="recipeIngredients" placeholder="Ingredients" value="<%=recipe.ingredients%>"><br>
       </div>
       <div class="mb-3">
-        <textarea style="width:600px; height:175px;" class="form-control" placeholder="<%=recipe.directions%>" value="<%=recipe.directions%>" name="directions" id="recipeDirections" cols="30" rows="10"></textarea><br>
+        <textarea style="width:600px; height:175px;" class="form-control" placeholder="<%=recipe.directions%>" value="<%=recipe.directions%>" name="directions" id="recipeDirections" cols="30" rows="10"><%=recipe.directions%></textarea><br>
       </div>
       <div class="mb-3">
         <input class="form-control" type="number" name="prepTime" id="prepTime" value="<%=recipe.prepTime%>"><br>

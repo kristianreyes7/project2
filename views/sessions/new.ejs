@@ -7,6 +7,7 @@
   <header>
     <%-include('../partials/header.ejs')%>
   </header>
+  <h4 style="text-align: center;">Log In ...</h4>
   <div style="height: 75vh;" class="d-flex mt-5 justify-content-lg-center align-items-center">
     <form action="/sessions" method="POST">
       <div class="mb-1">
@@ -16,6 +17,7 @@
       <div class="mb-1">
         <label for="password">Enter Password</label>
         <input style="width: 55vw;" class="form-control" type="password" name="password" id="password"><br>
+        <p>New User? Click <a href="/users/new">Here</a></p>
       </div>
       <input class="btn btn-secondary" type="submit" value="Log-in" role="button">
       <a class="btn btn-secondary" href="/recipes" role="button">Back To Index</a> 

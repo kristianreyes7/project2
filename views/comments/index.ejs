@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%-include('../partials/head.ejs')%>
+</head>
+<body>
+  <header>
+    <%-include('../partials/header.ejs')%>
+  </header>
+  <div class="main container-fluid">
+
+    <%=recipe.title%>
+    <% if (recipe.comments.length === 1){ %>
+      <h3>No Comments...</h3>
+      <div class="btn-group mr-2" role="group">
+        <button type="button" class="btn btn-secondary" name="button">
+          <a style="color:white; text-decoration: none;" href="/recipes/<%=recipe._id%>/comments/new">Add Comment</a>
+        </button>
+      </div>
+    <%}else {%>
+      <div class="recipe-ingredients mt-3">
+        <h5>Ingredients: </h5>
+        <ul>
+          <% for (let i = 0; i < recipe.comments.length; i++){%>
+          <li><%=recipe.comments[i]%></li>
+          <%}%>
+        </ul>
+      </div>
+        <div class="btn-group mr-2" role="group">
+          <button type="button" class="btn btn-secondary" name="button">
+            <a style="color:white; text-decoration: none;" href="/recipes/<%=recipe._id%>/comments/new">Add Comment</a>
+          </button>
+        </div>
+    <%}%>
+    
+
+  </div>
+  <footer>
+    <%-include('../partials/footer.ejs')%>
+  </footer>
+</body>
+</html>

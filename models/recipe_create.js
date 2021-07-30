@@ -11,6 +11,7 @@ const Recipe_schema = new Schema({
   prepTime: Number,
   cookTime: Number,
   servings: Number,
+  comments: [{title: String, body: String}],
 }, {timestamps: true})
 
 
