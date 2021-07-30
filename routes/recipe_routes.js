@@ -25,9 +25,9 @@ meal.put('/:id', Recipe_controller.edit);
 meal.delete('/:id', Recipe_controller.recipe_delete);
 //====Show====//
 meal.get('/:id', Recipe_controller.show);
-//====Comments====//
-meal.get('/:id/comments', Recipe_controller.comment_index);
-meal.get('/:id/comments/new', Recipe_controller.comment_render);
-meal.post('/:id/comments', Recipe_controller.new_comment);
+// //====Comments====//
+// meal.get('/:id/comments', Recipe_controller.comment_index);
+// meal.get('/:id/comments/new', Recipe_controller.comment_render);
+// meal.post('/:id/comments', Recipe_controller.new_comment);
 
 module.exports = meal;

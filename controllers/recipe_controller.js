@@ -76,33 +76,33 @@ const motto = (req, res) => {
   })  
 }
 //====comments====//
-const comment_index = (req, res) => {
-  Recipes.findById(req.params.id, (error, foundData) => {
-      error? console.log(error)
-      :
-      res.render('comments/index.ejs', {
-        recipe: foundData, 
-        currentUser: req.session.currentUser,
-      })   
-    })  
-}
-const new_comment = (req, res) => {
-  Recipes.findById(req.params.id, (error, foundData) => {
-    Comments.create(req.body, (error, newRecipe) => {
-      error? console.log(error)
-      :
-      res.redirect(`/recipes/${req.params.id}/comments`);    
-    })
-  })
-}
-const comment_render = (req, res) => {
-  Recipes.findById(req.params.id, (error, foundData) => {    
-    res.render('comments/new.ejs',{
-      recipe: foundData,
-      currentUser: req.session.currentUser
-    });  
-  })
-} 
+// const comment_index = (req, res) => {
+//   Recipes.findById(req.params.id, (error, foundData) => {
+//       error? console.log(error)
+//       :
+//       res.render('comments/index.ejs', {
+//         recipe: foundData, 
+//         currentUser: req.session.currentUser,
+//       })   
+//     })  
+// }
+// const new_comment = (req, res) => {
+//   Recipes.findById(req.params.id, (error, foundData) => {
+//     Comments.create(req.body, (error, newRecipe) => {
+//       error? console.log(error)
+//       :
+//       res.redirect(`/recipes/${req.params.id}/comments`);    
+//     })
+//   })
+// }
+// const comment_render = (req, res) => {
+//   Recipes.findById(req.params.id, (error, foundData) => {    
+//     res.render('comments/new.ejs',{
+//       recipe: foundData,
+//       currentUser: req.session.currentUser
+//     });  
+//   })
+// } 
   //====create====//
 const new_render = (req, res) => {
   res.render('recipes/new.ejs',{
@@ -264,7 +264,7 @@ module.exports = {
   edit,
   recipe_delete, 
   recipe_seed,
-  comment_index,
-  new_comment,
-  comment_render,
+  // comment_index,
+  // new_comment,
+  // comment_render,
 }

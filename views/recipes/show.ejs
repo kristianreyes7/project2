@@ -59,20 +59,20 @@
 
 
     <div class="btn-group mr-2" role="group">
-      <button type="button" class="btn btn-secondary" name="button">
+      <button type="button" class="btn btn-warning btn-sm" name="button">
         <a style="color:white; text-decoration: none;" href="/recipes/<%=recipe._id%>/edit">Edit</a>
       </button>
     </div>
     <div class="btn-group mr-2">
       <form action="/recipes/<%=recipe._id%>?_method=DELETE" method="POST">
-        <input class="btn btn-secondary" type="submit" value="DELETE"/>
+        <input class="btn btn-danger btn-sm" type="submit" value="DELETE"/>
       </form>
     </div>
-    <div class="btn-group mr-2" role="group">
+    <!-- <div class="btn-group mr-2" role="group">
       <button type="button" class="btn btn-secondary" name="button">
         <a style="color:white; text-decoration: none;" href="/recipes/<%=recipe._id%>/comments">Reviews</a>
       </button>
-    </div>
+    </div> -->
     
     
   

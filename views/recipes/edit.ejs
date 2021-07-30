@@ -28,18 +28,27 @@
         <input class="form-control" type="url" name="picture" id="recipeImg" value="<%=recipe.picture%>"><br>
       </div>
       <div class="mb-3">
-        <input class="form-control" type="text" name="ingredients" id="recipeIngredients" placeholder="Ingredients" value="<%=recipe.ingredients%>"><br>
+            <label for="recipeIngredients">Ingredients: </label>
+        <% for (ingredient of recipe.ingredients){%>
+            <input class="form-control" type="text" name="ingredients" id="recipeIngredients" value="<%=ingredient%>">
+          <%}%>
       </div>
       <div class="mb-3">
-        <textarea style="width:600px; height:175px;" class="form-control" placeholder="<%=recipe.directions%>" value="<%=recipe.directions%>" name="directions" id="recipeDirections" cols="30" rows="10"><%=recipe.directions%></textarea><br>
+        <% for (let i = 0; i < recipe.directions.length; i++){%>
+            <label for="recipeDirections">Step <%=i+1%>: </label>
+            <textarea class="form-control" name="directions" id="recipeDirections" cols="30" rows="10"><%=recipe.directions[i]%></textarea>
+          <%}%>
       </div>
       <div class="mb-3">
+        <label for="prepTime">Prep Time: </label>
         <input class="form-control" type="number" name="prepTime" id="prepTime" value="<%=recipe.prepTime%>"><br>
       </div>
       <div class="mb-3">
+        <label for="prepTime">Cook Time: </label>
         <input class="form-control" type="number" name="cookTime" id="cookTime" value="<%=recipe.cookTime%>"><br>
       </div>
       <div class="mb-3">
+        <label for="prepTime">Servings: </label>
         <input class="form-control" type="number" name="servingSize" id="servingSize" placeholder="Servings" value="<%=recipe.servings%>"><br>
       </div>
       <div class="mb-3">

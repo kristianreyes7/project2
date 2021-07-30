@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
+const Comment_schema = require('./comment_create.js')
 const Recipe_schema = new Schema({
   category: String,
   title: String,
@@ -11,7 +11,7 @@ const Recipe_schema = new Schema({
   prepTime: Number,
   cookTime: Number,
   servings: Number,
-  comments: [{title: String, body: String}],
+  // comments: [{Comment_schema}],
 }, {timestamps: true})
 
 
